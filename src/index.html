@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head lang="en">
     <meta charset="ISO-8859-1">
     <script src="js/app.min.js"></script>
     <title></title>
 </head>
-<body>
-<div>teste</div>
+<body ng-app="todoApp">
+    <form ng-controller="LoginCrtl">
+        <input type="text" ng-model="user.name" name="login">
+        <input type="text" ng-model="user.pwd" name="password">
+        <input type="submit" ng-click="login(user)" value="Start!!" />
+        <span>{{msg.error}}</span>
+    </form>
+    <div ng-controller="Teste">
+        {{item}}
+    </div>
 </body>
 </html>
