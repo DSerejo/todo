@@ -10,7 +10,27 @@ todoApp.controller('Teste', function ($scope) {
 });
 todoApp.controller('LoginCrtl', function ($scope) {
     $scope.msg={error:""};
-    $scope.login = function(user){
+    var login=function(user){
+        fb.authWithPassword({
+            email: user.name,
+            password: user.pwd
+        }, function(error, authData) {
+            if (error) {
+                switch (error.code) {
+                    case "INVALID_PASSWORD":
+                        $scope.msg.error="Password is invalid or email is already in use.";
+                    break;
+                    default:
+                        createUser(user);
+                }
+            } else {
+                $scope.msg.error="Authenticated successfully with payload:" + JSON.stringify(authData);
+
+            }
+            $scope.$apply();
+        });
+    };
+    var createUser=function(user){
         fb.createUser({
             email: user.name,
             password: user.pwd
@@ -26,9 +46,13 @@ todoApp.controller('LoginCrtl', function ($scope) {
                     default:
                         $scope.msg.error="Error creating user:" + error;
                 }
+                $scope.$apply();
             } else {
-                console.log("User account created successfully!");
+                login(user);
             }
         });
+    };
+    $scope.login = function(user){
+        login(user);
     };
 });
