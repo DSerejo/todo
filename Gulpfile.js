@@ -9,10 +9,13 @@ var rename = require('gulp-rename');
 
 var scripts = "./src/js/*.js";
 var html = "./src/*.html";
+var templates="./src/templates/*.html";
 var vendor = [
     "./bower_components/angular/angular.js",
     "./bower_components/angular-route/angular-route.js",
-    "./bower_components/firebase/firebase.js"
+    "./bower_components/angular-cookies/angular-cookies.js",
+    "./bower_components/firebase/firebase.js",
+    "./bower_components/angularfire/dist/angularfire.js"
     ];
 //Aqui criamos uma nova tarefa através do ´gulp.task´ e damos a ela o nome 'lint'
 gulp.task('lint', function() {
@@ -35,7 +38,7 @@ gulp.task('script', function() {
     gulp.src(vendor)
         .pipe(concat('./dist'))
         .pipe(rename('app.min.js'))
-//        .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('./dist/js'));
 });
 gulp.task('html', function() {
@@ -46,6 +49,8 @@ gulp.task('html', function() {
 // E pra terminar usamos o `gulp.dest` para colocar os arquivos concatenados e minificados na pasta build/
     gulp.src(html)
         .pipe(gulp.dest('./dist'));
+    gulp.src(templates)
+        .pipe(gulp.dest('./dist/templates'));
 });
 
 //Criamos uma tarefa 'default' que vai rodar quando rodamos `gulp` no projeto

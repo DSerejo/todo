@@ -6,13 +6,8 @@
     <title></title>
 </head>
 <body ng-app="todoApp">
-    <form ng-controller="LoginCrtl">
-        <input type="text" ng-model="user.name" name="login">
-        <input type="text" ng-model="user.pwd" name="password">
-        <input type="submit" ng-click="login(user)" value="Start!!" />
-        <span>{{msg.error}}</span>
 
-    </form>
+    <div ng-view></div>
     <div ng-controller="Teste">
         {{item}}
     </div>
