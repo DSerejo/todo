@@ -61,7 +61,7 @@ todoControllers.controller('HomeCtrl', ['$scope', '$http','$rootScope',"$firebas
     }]);
 //    .directive('myRepeatDirective', function() {
 //        return function(scope, element, attrs) {
-//            angular.element(element).css('color','blue');
+//            angular.element(element).scss('color','blue');
 //
 //        };
 //    });
