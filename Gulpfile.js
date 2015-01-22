@@ -10,7 +10,8 @@ var rename = require('gulp-rename');
 var scripts = "./src/js/*.js";
 var html = "./src/*.html";
 var vendor = [
-    "./bower_components/angularjs/angular.js",
+    "./bower_components/angular/angular.js",
+    "./bower_components/angular-route/angular-route.js",
     "./bower_components/firebase/firebase.js"
     ];
 //Aqui criamos uma nova tarefa através do ´gulp.task´ e damos a ela o nome 'lint'
