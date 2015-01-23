@@ -2,9 +2,8 @@
  * Created by dserejo on 1/21/2015.
  */
 var todoControllers = angular.module('todoControllers', ['ngCookies']);
-todoControllers.controller('FiltrosCtrl',['$scope',function(){
+todoControllers.controller('FiltrosCtrl',['$scope',function($scope){
     $scope.filters=[
-
         {
             'filterId': 0,
             'text': 'All'
