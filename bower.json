@@ -21,6 +21,7 @@
     "bootstrap": "~3.3.2",
     "angular-cookies": "~1.3.10",
     "angular-bootstrap": "~0.12.0",
-    "isotope": "~2.1.0"
+    "isotope": "~2.1.0",
+    "interact": "~1.2.2"
   }
 }
