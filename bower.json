@@ -19,6 +19,8 @@
     "angular-route": "~1.3.10",
     "angularfire": "~0.9.1",
     "bootstrap": "~3.3.2",
-    "angular-cookies": "~1.3.10"
+    "angular-cookies": "~1.3.10",
+    "angular-bootstrap": "~0.12.0",
+    "isotope": "~2.1.0"
   }
 }
