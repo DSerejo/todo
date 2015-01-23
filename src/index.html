@@ -17,17 +17,18 @@
             <div class = 'pencil' ng-include="'images/pencil.svg'"></div>
         </div>
     </div>
-    <div class="painel container" >
-        <ul class="filtros" ng-controller="FiltrosCtrl">
+    <div class="painel container" ng-controller="HomeCtrl" >
+        <ul class="filtros" >
             <li ng-repeat="filter in filters" ng-click="select($index)" ng-class="{active: $index == selected}"><a>{{filter.text}}</a></li>
         </ul>
-        <div class="post-it" id="yes-drop">
-            <strong>Mary, Mary</strong>
-            Mary, Mary, quite contrary,
-            How does your garden grow?
-            With silver bells, and cockle shells,
-            And pretty maids all in a row.
+
+        <div  ng-repeat="task in tasks" class="post-it" id="yes-drop">
+                <strong>{{task.title}}</strong><br>
+                {{task.text}}
+                <div class = 'checkmark' ng-include="'images/checkmark.svg'"></div>
         </div>
+
+
     </div>
 
 

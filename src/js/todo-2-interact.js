@@ -27,6 +27,7 @@ interact('.post-it')
         inertia: true,
         // keep the element within the area of it's parent
         restrict: {
+
             restriction: "parent",
             endOnly: true,
             elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
@@ -49,6 +50,7 @@ interact('.post-it')
                     'translate(' + x + 'px, ' + y + 'px) scale(0.25)'
                     ;
             // update the posiion attributes
+            console.log(x,y);
             target.setAttribute('data-x', x);
             target.setAttribute('data-y', y);
         },
@@ -60,6 +62,7 @@ interact('.post-it')
             var target = event.target;
             var x = target.getAttribute('data-x');
             var y = target.getAttribute('data-y');
+            console.log(x,y);
             target.style.webkitTransform =
                 target.style.transform =
                     'translate(' + x + 'px, ' + y + 'px) scale(1) rotate(2deg)'

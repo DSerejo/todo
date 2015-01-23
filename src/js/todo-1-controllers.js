@@ -2,7 +2,14 @@
  * Created by dserejo on 1/21/2015.
  */
 var todoControllers = angular.module('todoControllers', ['ngCookies']);
+todoControllers.controller('PostItCtrl',['$scope',function($scope){
+
+}]);
 todoControllers.controller('FiltrosCtrl',['$scope',function($scope){
+
+}]);
+
+var iniciaFiltro=function($scope){
     $scope.filters=[
         {
             'filterId': 0,
@@ -24,9 +31,10 @@ todoControllers.controller('FiltrosCtrl',['$scope',function($scope){
     $scope.select= function(index) {
         $scope.selected = index;
     };
-}]);
+};
 todoControllers.controller('HomeCtrl', ['$scope', '$http','$rootScope',"$firebase","$cookies",
     function ($scope, $http,$rootScope,$firebase,$cookies) {
+        iniciaFiltro($scope);
         $rootScope.uid=$rootScope.uid||$cookies.todoDSauth;
         if($rootScope.uid===undefined){
             window.location.href='#/login';
@@ -37,21 +45,6 @@ todoControllers.controller('HomeCtrl', ['$scope', '$http','$rootScope',"$firebas
         var tree=$firebase(ref);
         $scope.tasks = $firebase(ref).$asObject();
 
-//        $scope.tasks = sync.$asArray();
-//        for(var i in $scope.tasks){
-//            var task = $scope.tasks[i];
-//            task.sync=$firebase(ref.child(task.$id)).$asArray();
-//        }
-//        $scope.addTask = function(text,date,task) {
-        var getNode = function(key,task){
-            var node;
-            if(task.urlParent===undefined){
-                node =  new Firebase($scope.fbUrl+"/"+key+'/nodes');
-            }else{
-                node =  new Firebase(task.urlParent+"/nodes/"+key+'/nodes');
-            }
-            return $firebase(node);
-        };
         $scope.addTask = function(key,data,task) {
             var url;
             if(task===undefined){
@@ -68,7 +61,7 @@ todoControllers.controller('HomeCtrl', ['$scope', '$http','$rootScope',"$firebas
             var node =  new Firebase(url);
             node =  $firebase(node);
             var d = new Date(data.date);
-            node.$asArray().$add({text:data.text,date: d.toISOString(),urlParent:url});
+            node.$asArray().$add({title:data.title,text:data.text,date: d.toISOString(),urlParent:url});
     };
         $scope.removeTask =function(key,task){
             var node;

@@ -3,6 +3,7 @@
   height: 600px;
   margin: 0 auto;
   margin-left: 120px;
+  background: #eee;
   .filtros{
     list-style-type: none;
     text-align: center;
@@ -59,6 +60,18 @@
     box-shadow: 0px 0 3px rgba(0,0,0,0.1);
   }
   //display: box;
+  .checkmark{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    svg{
+      width: 100%;
+      height: 100%;
+
+    }
+  }
   word-break: break-word;
 
   -webkit-box-shadow: #DDD 0px 1px 2px;
