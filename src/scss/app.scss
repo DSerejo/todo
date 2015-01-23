@@ -4,6 +4,8 @@
   height: 600px;
  // border: 15px solid #130d02;
   margin: 0 auto;
+  margin-left: 120px;
+
   //background-color: #ad6908;
 //  background-image: url(https://sites.google.com/site/carolinacsfirst/unit/home/websites/corkboard.jpg);
  //  background-repeat: repeat;
@@ -51,6 +53,43 @@
   width: 250px;height: 200px;
   font-family: 'The Girl Next Door', cursive; /*originally with brain flower font*/
   font-size: 17px;
+}
 
 
+.post-it.moving{
+  -webkit-transform: scale(0.25) !important;
+  transform: scale(0.25) !important;
+}
+
+.tools{
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: rgb(79, 79, 79);
+  width: 100px;
+  height: 800px;
+  z-index:-1;
+  .tools-items{
+    margin-top: 80px;
+    .pencil{
+      transform: rotate(30deg);
+      cursor:pointer;
+      &:hover{
+        transform: rotate(30deg) scale(1.1);
+      }
+    }
+  }
+}
+
+.trash{
+  width:80px;
+  margin: auto;
+  svg{
+    fill:white;
+    width:100%;
+  }
+}
+.trash.drop-target{
+  -webkit-transform: scale(1.25) !important;
+  transform: scale(1.25) !important;
 }

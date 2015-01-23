@@ -14,6 +14,7 @@ var scssFolder = './src/scss/*.scss';
 var html = "./src/*.html";
 var templates="./src/templates/*.html";
 var fonts = "./src/fonts/*.*";
+var images = "./src/images/*.*";
 
 var vendor = [
     "./bower_components/angular/angular.js",
@@ -76,6 +77,8 @@ gulp.task('html', function() {
         .pipe(gulp.dest('./dist/templates'));
     gulp.src(fonts)
         .pipe(gulp.dest('./dist/fonts'));
+    gulp.src(images)
+        .pipe(gulp.dest('./dist/images'));
     vendorCss.push('./src/scss/*.css');
     gulp.src(vendorCss)
         .pipe(concat('./dist/css'))

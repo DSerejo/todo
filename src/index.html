@@ -8,45 +8,18 @@
 
 </head>
 <body ng-app="todoApp">
+
     <div ></div>
     <nav class="navbar menu" ng-include="'templates/menu.html'"></nav>
+    <div class="tools">
+        <div class="tools-items">
+            <div class = 'trash dropzone' ng-include="'images/trash.svg'"></div>
+            <div class = 'pencil' ng-include="'images/pencil.svg'"></div>
+
+        </div>
+    </div>
     <div class="painel container">
-        <div class="post-it">
-            <strong>Mary, Mary</strong>
-            Mary, Mary, quite contrary,
-            How does your garden grow?
-            With silver bells, and cockle shells,
-            And pretty maids all in a row.
-        </div>
-        <div class="post-it">
-            <strong>Mary, Mary</strong>
-            Mary, Mary, quite contrary,
-            How does your garden grow?
-            With silver bells, and cockle shells,
-            And pretty maids all in a row.
-        </div>
-        <div class="post-it">
-            <strong>Mary, Mary</strong>
-            Mary, Mary, quite contrary,
-            How does your garden grow?
-            With silver bells, and cockle shells,
-            And pretty maids all in a row.
-        </div>
-        <div class="post-it">
-            <strong>Mary, Mary</strong>
-            Mary, Mary, quite contrary,
-            How does your garden grow?
-            With silver bells, and cockle shells,
-            And pretty maids all in a row.
-        </div>
-        <div class="post-it">
-            <strong>Mary, Mary</strong>
-            Mary, Mary, quite contrary,
-            How does your garden grow?
-            With silver bells, and cockle shells,
-            And pretty maids all in a row.
-        </div>
-        <div class="post-it">
+        <div class="post-it" id="yes-drop">
             <strong>Mary, Mary</strong>
             Mary, Mary, quite contrary,
             How does your garden grow?
@@ -54,6 +27,8 @@
             And pretty maids all in a row.
         </div>
     </div>
+
+
 
     <!--<div ng-view></div>-->
     <!--<div ng-controller="Teste">-->
