@@ -13,14 +13,18 @@ var scripts = "./src/js/*.js";
 var scssFolder = './src/scss/*.scss';
 var html = "./src/*.html";
 var templates="./src/templates/*.html";
+var fonts = "./src/fonts/*.*";
+
 var vendor = [
     "./bower_components/angular/angular.js",
     "./bower_components/angular-route/angular-route.js",
     "./bower_components/angular-cookies/angular-cookies.js",
     "./bower_components/firebase/firebase.js",
     "./bower_components/angularfire/dist/angularfire.js",
+    "/bower_components\isotope\dist\isotope.pkgd.min.js",
     "./bower_components/jquery/dist/jquery.js",
-    "./bower_components/bootstrap/dist/bootstrap.js"
+    "./bower_components/bootstrap/dist/js/bootstrap.js",
+
     ];
 
 var vendorCss=[
@@ -53,16 +57,11 @@ gulp.task('script', function() {
 
 gulp.task('sass', function () {
 
-    gulp.src(scssFolder)
-        .pipe(sass())
-        .pipe(gulp.dest('./build/css'));
+    //gulp.src(scssFolder)
+    //    .pipe(sass())
+    //    .pipe(gulp.dest('./build/css'));
 
-    vendorCss.push('./build/css/*.css');
-    gulp.src(vendorCss)
-        .pipe(concat('./dist/css'))
-        .pipe(rename('app.css'))
-        .pipe(uglifycss())
-        .pipe(gulp.dest('./dist/css'));
+
 });
 
 gulp.task('html', function() {
@@ -75,27 +74,22 @@ gulp.task('html', function() {
         .pipe(gulp.dest('./dist'));
     gulp.src(templates)
         .pipe(gulp.dest('./dist/templates'));
+    gulp.src(fonts)
+        .pipe(gulp.dest('./dist/fonts'));
+    vendorCss.push('./src/scss/*.css');
+    gulp.src(vendorCss)
+        .pipe(concat('./dist/css'))
+        .pipe(rename('app.css'))
+        .pipe(uglifycss())
+        .pipe(gulp.dest('./dist/css'));
 
 });
 
 //Criamos uma tarefa 'default' que vai rodar quando rodamos `gulp` no projeto
 gulp.task('watch', function () {
-    gulp.watch(scssFolder, ['sass']);
+    gulp.watch(scssFolder, ['html']);
     gulp.watch(html, ['html']);
     gulp.watch(scripts, ['script','lint']);
 
 });
 gulp.task('default', ['watch','html','script','lint']);
-//gulp.task('default', function() {
-//// Usamos o `gulp.run` para rodar as tarefas
-//// E usamos o `gulp.watch` para o Gulp esperar mudanças nos arquivos para rodar novamente
-//
-////    gulp.run('lint', 'script','html','sass');
-////    gulp.watch(scripts, function(evt) {
-////        gulp.run('lint', 'script');
-////    });
-////    gulp.watch(html, function(evt) {
-////        gulp.run('html');
-////    });
-////    gulp.watch('./scss/*.scss');
-//});

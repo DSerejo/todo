@@ -3,7 +3,6 @@
  */
 fb = new Firebase("https://intense-fire-6623.firebaseio.com");
 
-
 var todoApp = angular.module('todoApp', ['todoControllers','ngRoute',"firebase"]);
 todoApp.config(['$routeProvider',
     function($routeProvider) {
@@ -19,6 +18,7 @@ todoApp.config(['$routeProvider',
             otherwise({
                 redirectTo: '/home'
             });
+
     }]);
 
 
