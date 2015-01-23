@@ -15,10 +15,22 @@
         <div class="tools-items">
             <div class = 'trash dropzone' ng-include="'images/trash.svg'"></div>
             <div class = 'pencil' ng-include="'images/pencil.svg'"></div>
-
         </div>
     </div>
-    <div class="painel container">
+
+    <div class="painel container" >
+        <ul class="filtros" ng-controller="FiltrosCtrl">
+            <li ng-repeat="filter in filters" ng-click="select($index)" ng-class="{active: $index == selected}">
+                <a>{{filter.text}}</a>
+            </li>
+
+            <!--<li><a>All</a></li>-->
+            <!--<li><a>Active</a></li>-->
+            <!--<li><a>Completed</a></li>-->
+            <!--<li><a>Delayed</a></li>-->
+
+
+        </ul>
         <div class="post-it" id="yes-drop">
             <strong>Mary, Mary</strong>
             Mary, Mary, quite contrary,

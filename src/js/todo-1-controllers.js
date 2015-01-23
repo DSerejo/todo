@@ -2,7 +2,30 @@
  * Created by dserejo on 1/21/2015.
  */
 var todoControllers = angular.module('todoControllers', ['ngCookies']);
+todoControllers.controller('FiltrosCtrl',['$scope',function(){
+    $scope.filters=[
 
+        {
+            'filterId': 0,
+            'text': 'All'
+        },
+        {
+            'filterId': 1,
+            'text': 'Active'
+        },
+        {
+            'filterId': 2,
+            'text': 'Completed'
+        },
+        {    'filterId': 3,
+            'text': 'Delayed'
+        }
+    ];
+    $scope.selected = 0;
+    $scope.select= function(index) {
+        $scope.selected = index;
+    };
+}]);
 todoControllers.controller('HomeCtrl', ['$scope', '$http','$rootScope',"$firebase","$cookies",
     function ($scope, $http,$rootScope,$firebase,$cookies) {
         $rootScope.uid=$rootScope.uid||$cookies.todoDSauth;

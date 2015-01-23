@@ -1,21 +1,39 @@
 .painel{
   position: relative;
-//  width: 700px;
   height: 600px;
- // border: 15px solid #130d02;
   margin: 0 auto;
   margin-left: 120px;
+  .filtros{
+    list-style-type: none;
+    text-align: center;
+    margin-top: -10px;
+    li{
+      display: inline;
+      padding: 6px 15px;
+      background-color: #edbc64;
+      border-bottom: 4px solid #cea157;
+      cursor: pointer;
+      &:hover{
+        background-color: #dead65;
 
-  //background-color: #ad6908;
-//  background-image: url(https://sites.google.com/site/carolinacsfirst/unit/home/websites/corkboard.jpg);
- //  background-repeat: repeat;
-//  opacity: 0.2;
+      }
+      a{
+        color:white;
+        &:hover{
+          text-decoration:none;
+
+        }
+
+      }
+    }
+  }
   box-shadow: 0px 0px 5px rgba(0,0,0,.4);
 }
 .menu{
   background: cornflowerblue;
   border-bottom: 5px solid royalblue;
   height: 65px;
+  z-index: 2;
   .navbar-brand{
      color: whitesmoke;
      font-size:  20px;
@@ -68,7 +86,7 @@
   background-color: rgb(79, 79, 79);
   width: 100px;
   height: 800px;
-  z-index:-1;
+
   .tools-items{
     margin-top: 80px;
     .pencil{
@@ -78,12 +96,14 @@
         transform: rotate(30deg) scale(1.1);
       }
     }
+
   }
 }
 
 .trash{
   width:80px;
   margin: auto;
+
   svg{
     fill:white;
     width:100%;

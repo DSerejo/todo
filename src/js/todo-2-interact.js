@@ -62,7 +62,7 @@ interact('.post-it')
             var y = target.getAttribute('data-y');
             target.style.webkitTransform =
                 target.style.transform =
-                    'translate(' + x + 'px, ' + y + 'px) scale(1)'
+                    'translate(' + x + 'px, ' + y + 'px) scale(1) rotate(2deg)'
             ;
 //            textEl && (textEl.textContent =
 //                'moved a distance of '
