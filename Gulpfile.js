@@ -21,10 +21,10 @@ var vendor = [
     "./bower_components/angular-cookies/angular-cookies.js",
     "./bower_components/firebase/firebase.js",
     "./bower_components/angularfire/dist/angularfire.js",
-    "/bower_components\isotope\dist\isotope.pkgd.min.js",
+
     "./bower_components/jquery/dist/jquery.js",
     "./bower_components/bootstrap/dist/js/bootstrap.js",
-
+    "/bower_components/isotope/dist/isotope.pkgd.js",
     ];
 
 var vendorCss=[
@@ -51,7 +51,7 @@ gulp.task('script', function() {
     gulp.src(vendor)
         .pipe(concat('./dist'))
         .pipe(rename('app.min.js'))
-        .pipe(uglify())
+       // .pipe(uglify())
         .pipe(gulp.dest('./dist/js'));
 });
 
@@ -80,7 +80,7 @@ gulp.task('html', function() {
     gulp.src(vendorCss)
         .pipe(concat('./dist/css'))
         .pipe(rename('app.css'))
-        .pipe(uglifycss())
+      //  .pipe(uglifycss())
         .pipe(gulp.dest('./dist/css'));
 
 });

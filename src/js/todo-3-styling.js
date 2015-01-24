@@ -4,11 +4,11 @@
 jQuery(function($){
    //$('.painel').height(window.innerHeight*0.8);
     $('.painel').width(window.innerWidth*0.8);
-    var $container = $('.painel');
-// init
+//    var $container = $('.painel');
+//// init
+//
+//    $container.isotope();
 
-    $container.isotope();
-    
     //    // options
     //    itemSelector: '.post-it',
     //    layoutMode: 'fitRows'
