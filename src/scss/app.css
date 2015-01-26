@@ -2,26 +2,42 @@
   position: relative;
   height: 600px;
   margin: 0 auto;
+  margin-left: 120px;
+  background: #eee;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4); }
+  .painel .filtros {
+    list-style-type: none;
+    text-align: center;
+    margin-top: -10px; }
+    .painel .filtros li.active, .painel .filtros li:hover {
+      background-color: #cea157; }
+    .painel .filtros li {
+      display: inline;
+      padding: 6px 15px;
+      background-color: #edbc64;
+      border-bottom: 4px solid #cea157;
+      cursor: pointer;
+      margin: 0 2px; }
+      .painel .filtros li a {
+        color: white;
+        font-size: 16px; }
+        .painel .filtros li a:hover {
+          text-decoration: none; }
 
 .menu {
   background: cornflowerblue;
   border-bottom: 5px solid royalblue;
-  height: 65px; }
+  height: 65px;
+  z-index: 2; }
   .menu .navbar-brand {
     color: whitesmoke;
     font-size: 20px; }
 
-.post-it::after {
-  display: inline-block;
-  width: 100%;
-  content: ""; }
-
 .post-it {
   word-break: break-word;
   -webkit-box-shadow: #DDD 0px 1px 2px;
-  position: relative;
-  background-color: #F4F39E;
+  position: absolute;
+  background-color: #fef495;
   border-color: #DEE184;
   text-align: center;
   float: left;
@@ -38,10 +54,84 @@
   -o-transform: rotate(2deg);
   -ms-transform: rotate(2deg);
   transform: rotate(2deg);
-  width: 250px;
-  height: 200px;
+  width: 300px;
+  height: 250px;
   font-family: 'The Girl Next Door', cursive;
   /*originally with brain flower font*/
   font-size: 17px; }
+  .post-it:hover .miniMenu li {
+    visibility: visible;
+    cursor: pointer !important; }
+  .post-it .miniMenu {
+    display: block;
+    position: absolute;
+    width: 110px;
+    height: 30px;
+    top: -21px;
+    left: 30%;
+    border: 1px solid #fff;
+    background: rgba(254, 254, 254, 0.6);
+    -webkit-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    list-style-type: none;
+    text-align: center; }
+    .post-it .miniMenu .checkmarkMenu.checked {
+      opacity: 1; }
+    .post-it .miniMenu .checkmarkMenu {
+      opacity: 0.3; }
+      .post-it .miniMenu .checkmarkMenu:hover {
+        opacity: 1; }
+    .post-it .miniMenu li {
+      display: inline-table;
+      width: 25px;
+      height: 25px;
+      visibility: hidden; }
+      .post-it .miniMenu li svg {
+        width: 100%;
+        height: 100%; }
+  .post-it .checkmark {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute; }
+    .post-it .checkmark svg {
+      width: 100%;
+      height: 100%; }
+
+.post-it.white {
+  color: white; }
+
+.post-it.moving {
+  -webkit-transform: scale(0.25) !important;
+  transform: scale(0.25) !important; }
+
+.tools {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #4f4f4f;
+  width: 100px;
+  height: 800px; }
+  .tools .tools-items {
+    margin-top: 80px; }
+    .tools .tools-items .pencil {
+      transform: rotate(30deg);
+      cursor: pointer; }
+      .tools .tools-items .pencil:hover {
+        transform: rotate(30deg) scale(1.1); }
+
+.trash {
+  width: 80px;
+  margin: auto; }
+  .trash svg {
+    fill: white;
+    width: 100%; }
+
+.trash.drop-target {
+  -webkit-transform: scale(1.25) !important;
+  transform: scale(1.25) !important; }
 
 /*# sourceMappingURL=app.css.map */

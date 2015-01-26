@@ -1,18 +1,48 @@
 
-<script type="text/ng-template"  id="tree_item_renderer.html">
-    <input ng-model="data.text" ng-change="data.$save()" />
-    <input ng-model="data.date" ng-change="data.$save()" />
-    <!-- delete message -->
-    <button ng-click="removeTask(key,data)">X</button>
-    <button ng-click="addTask(key,{text:'a',date:'2014-01-02'},data)">+</button>
-    <ul>
-        <li ng-repeat="(key,data) in data.nodes" ng-include="'tree_item_renderer.html'"></li>
-    </ul>
-</script>
+<div ng-include="'templates/addtask.html'"></div>
 
-<ul >
-    <li ng-repeat="(key,data) in tasks" ng-include="'tree_item_renderer.html'"></li>
-</ul>
+<nav class="navbar menu" ng-include="'templates/menu.html'"></nav>
+<div class="tools">
+    <div class="tools-items">
+        <div class = 'trash dropzone' ng-include="'images/trash.svg'"></div>
+        <div class = 'pencil' ng-include="'images/pencil.svg'" ng-click="toggleTaskForm()"></div>
+    </div>
+</div>
+<div class="painel container" ng-controller="HomeCtrl" >
+    <ul class="filtros" >
+        <li ng-repeat="filter in filters" ng-click="select($index)" ng-class="{active: $index == selected}"><a>{{filter.text}}</a></li>
+    </ul>
+
+    <div  style="background-color: {{task.color}};
+        transform:translate( {{task.x}}px,{{task.y}}px) scale(1) rotate(2deg)"
+      ng-repeat="(key,task) in tasksArray |myFilter:filter.text" class="post-it" id="yes-drop"  ng-mousedown="currentTask(key,task)"
+            data-x="{{task.x}}" data-y="{{task.y}}" >
+        <strong>{{task.title}}</strong><br>
+        {{task.text}}
+        <ul class="miniMenu">
+            <li class = 'checkmarkMenu' ng-include="'images/checkmark.svg'" ng-click="checkTask(key,task)"></li>
+            <li class = 'editMenu' ng-include="'images/edit.svg'" ng-click="adding?currentTask(key,task):toggleTaskForm(key,task)"></li>
+        </ul>
+        <div class = 'checkmark' ng-include="'images/checkmark.svg'" ng-show="task.checked" ng-click="removeTask()"></div>
+
+    </div>
+
+</div>
+
+<!--<script type="text/ng-template"  id="tree_item_renderer.html">-->
+    <!--<input ng-model="data.text" ng-change="data.$save()" />-->
+    <!--<input ng-model="data.date" ng-change="data.$save()" />-->
+    <!--&lt;!&ndash; delete message &ndash;&gt;-->
+    <!--<button ng-click="removeTask(key,data)">X</button>-->
+    <!--<button ng-click="addTask(key,{text:'a',date:'2014-01-02'},data)">+</button>-->
+    <!--<ul>-->
+        <!--<li ng-repeat="(key,data) in data.nodes" ng-include="'tree_item_renderer.html'"></li>-->
+    <!--</ul>-->
+<!--</script>-->
+
+<!--<ul >-->
+    <!--<li ng-repeat="(key,data) in tasks" ng-include="'tree_item_renderer.html'"></li>-->
+<!--</ul>-->
 
 <!--<ul>-->
     <!--<li ng-repeat="task in tasks" my-repeat-directive>-->
@@ -22,10 +52,5 @@
     <!--</li>-->
 <!--</ul>-->
 <!-- push a new message into the array -->
-<form ng-submit="addTask('',{text:newTaskText,date:newTaskDate})">
-    <input ng-model="newTaskText" />
-    <input ng-model="newTaskDate" />
 
-    <button type="submit">add task</button>
-</form>
 

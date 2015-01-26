@@ -1,37 +1,108 @@
 .painel{
   position: relative;
-//  width: 700px;
   height: 600px;
- // border: 15px solid #130d02;
   margin: 0 auto;
-  //background-color: #ad6908;
-//  background-image: url(https://sites.google.com/site/carolinacsfirst/unit/home/websites/corkboard.jpg);
- //  background-repeat: repeat;
-//  opacity: 0.2;
+  margin-left: 120px;
+  background: #eee;
+  .filtros{
+    list-style-type: none;
+    text-align: center;
+    margin-top: -10px;
+    li.active{
+      //background-color: #dead65;
+      background-color: #cea157;
+    }
+    li{
+      display: inline;
+      padding: 6px 15px;
+      background-color: #edbc64;
+      border-bottom: 4px solid #cea157;
+      cursor: pointer;
+      margin: 0 2px;
+      &:hover{
+        @extend li.active;
+      }
+      a{
+        color:white;
+        font-size: 16px;
+        &:hover{
+          text-decoration:none;
+
+        }
+
+      }
+    }
+  }
   box-shadow: 0px 0px 5px rgba(0,0,0,.4);
 }
 .menu{
   background: cornflowerblue;
   border-bottom: 5px solid royalblue;
   height: 65px;
+  z-index: 2;
   .navbar-brand{
      color: whitesmoke;
      font-size:  20px;
   }
 }
-.post-it::after{
-  display: inline-block;
-  width: 100%;
-  content: "";
-
-}
 .post-it{
+  &:hover .miniMenu li{
+    visibility: visible;
+    cursor: pointer !important;
+  }
+  .miniMenu{
+    display: block;
+    position: absolute;
+    width: 110px;
+    height: 30px;
+    top: -21px;
+    left: 30%;
+    border: 1px solid #fff;
+    background: rgba(254, 254, 254, .6);
+    -webkit-box-shadow: 0px 0 3px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0 3px rgba(0,0,0,0.1);
+    box-shadow: 0px 0 3px rgba(0,0,0,0.1);
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    .checkmarkMenu.checked{
+      opacity: 1;
+    }
+    .checkmarkMenu{
+      opacity: 0.3;
+      &:hover{
+        opacity: 1;
+      }
+    }
+    li{
+      display: inline-table;
+      width:25px;height: 25px;
+      visibility: hidden;
+      svg{
+        width:100%;height: 100%;
+      }
+    }
+
+  }
   //display: box;
+  .checkmark{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    svg{
+      width: 100%;
+      height: 100%;
+
+    }
+  }
   word-break: break-word;
 
   -webkit-box-shadow: #DDD 0px 1px 2px;
-  position: relative;
-  background-color: #F4F39E;
+  position: absolute;
+
+  background-color: #fef495;
   border-color: #DEE184;
   text-align: center;
   float: left;
@@ -48,8 +119,50 @@
   -o-transform: rotate(2deg);
   -ms-transform: rotate(2deg);
   transform: rotate(2deg);
-  width: 250px;height: 200px;
+  width: 300px;height: 250px;
   font-family: 'The Girl Next Door', cursive; /*originally with brain flower font*/
   font-size: 17px;
+}
 
+.post-it.white{
+  color:white;
+}
+.post-it.moving{
+  -webkit-transform: scale(0.25) !important;
+  transform: scale(0.25) !important;
+}
+
+.tools{
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: rgb(79, 79, 79);
+  width: 100px;
+  height: 800px;
+
+  .tools-items{
+    margin-top: 80px;
+    .pencil{
+      transform: rotate(30deg);
+      cursor:pointer;
+      &:hover{
+        transform: rotate(30deg) scale(1.1);
+      }
+    }
+  }
+}
+
+
+.trash{
+  width:80px;
+  margin: auto;
+
+  svg{
+    fill:white;
+    width:100%;
+  }
+}
+.trash.drop-target{
+  -webkit-transform: scale(1.25) !important;
+  transform: scale(1.25) !important;
 }

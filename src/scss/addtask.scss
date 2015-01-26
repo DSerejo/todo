@@ -1,0 +1,173 @@
+#addTaskForm{
+  z-index: 6;
+ height: 500px;
+  background-color: #F4F39E;
+  border-color: #DEE184;
+  width: 75%;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.8);
+  position: absolute;
+  margin-left: 12%;
+  transform: translate(0,-101%);
+  textarea {
+    border: none;
+    color: #444;
+    font-family: 'Crafty Girls', cursive;
+    font-size: 1em;
+    height: 96px;
+    margin-bottom: 16px;
+    padding: 8px;
+    width: 100%;
+    resize: none;
+  }
+  p{
+    text-align: right;
+  }
+
+  -webkit-transition: all .375s ease-out;
+
+  .title{
+    margin-left: 33%;
+    font-size: 56px;
+    font-family: 'Crafty Girls', cursive;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+  }
+
+  .taskTitle{
+    input{
+      font-family: 'Crafty Girls', cursive;
+      height: 40px;
+      margin-top: 20px;
+      margin-left: 30px;
+      width: 100%;
+
+    }
+    .pencil{
+      transform: rotate(30deg);
+      cursor:pointer;
+      width:100px;
+    }
+  }
+
+  .buttons-container {
+    list-style-type: none;
+    text-align: center;
+
+    li.active {
+      //background-color: #dead65;
+      background-color: #cea157;
+    }
+    li {
+      display: inline;
+      padding: 6px 15px;
+      background-color: #edbc64;
+      border-bottom: 4px solid #cea157;
+      cursor: pointer;
+      margin: 0 2px;
+      color: #ffffff;
+      font-size: 17px;
+      &:hover {
+        @extend li.active;
+      }
+      a {
+        color: white;
+        font-size: 16px;
+        &:hover {
+          text-decoration: none;
+
+        }
+
+      }
+    }
+  }
+  ul.palette{
+    list-style:none;
+    display:block;
+    width:80%;
+    height:40%;
+    border:1px solid;
+    margin: 10px auto;
+    padding: 0;
+    height: 64px;
+    li{
+      display:block;
+      float:left;
+      margin:auto;
+      box-shadow:0 0 0px 1px rgba(255,255,255,1);
+      width:16.666%;
+      height:33.333%;
+      cursor:pointer;
+    }
+
+  }
+
+  /* colors */
+
+  .grasshopper{
+    background:#b8f397;
+  }
+  .summersky{
+    background:#85c7fd;
+  }
+  .postit{
+    background:#fef495;
+  }
+  .pinkwine{
+    background:#fd8b96;
+  }
+  .cloudymorning{
+    background:#f1f1f0;
+  }
+  .charcoal{
+    background:#5c5c5c;
+  }
+
+  /**/
+
+  .fourhundredtwenty{
+    background:#a9ed83;
+  }
+  .wintersky{
+    background:#70baf7;
+  }
+  .beer{
+    background:#f9ec80;
+  }
+  .brickwall{
+    background:#f77681;
+  }
+  .smokey{
+    background:#e9e9e8;
+  }
+  .blackgranit{
+    background:#404040;
+  }
+
+  /**/
+
+  .stpatrick{
+    background:#98d575;
+  }
+  .mediterranean{
+    background:#63a8df;
+  }
+  .sandstorm{
+    background:#e0d673;
+  }
+  .redlightdistrict{
+    background:#cc6069;
+  }
+  .nystreet{
+    background:#c0c0bf;
+  }
+  .samourai{
+    background:#343434;
+  }
+
+
+}
+
+
+@-webkit-keyframes fadeOutCard{
+
+}

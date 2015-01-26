@@ -1,0 +1,16 @@
+{
+  "firebase": "intense-fire-6623",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+	"**/.*",
+    "**/node_modules/**",
+	"**/bower_components/**",
+	"**/build/**",
+	"**/src/**",
+	"**/.idea/**",
+	"**/.git/**"
+	
+	
+  ]
+}

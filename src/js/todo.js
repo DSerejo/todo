@@ -1,9 +1,10 @@
 /**
  * Created by dserejo on 1/21/2015.
  */
+
 fb = new Firebase("https://intense-fire-6623.firebaseio.com");
 
-var todoApp = angular.module('todoApp', ['todoControllers','ngRoute',"firebase"]);
+var todoApp = angular.module('todoApp', ['todoControllers','ngRoute',"firebase",'ui.date']);
 todoApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
@@ -16,7 +17,7 @@ todoApp.config(['$routeProvider',
                 controller: 'HomeCtrl'
             }).
             otherwise({
-                redirectTo: '/home'
+                redirectTo: '/login'
             });
 
     }]);

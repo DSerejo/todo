@@ -1,0 +1,62 @@
+.login-container {
+  @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+  background-color: #eee;
+  width: 420px;
+  height: 318px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  /* sets whole page to Open Sans and sets background color */
+  /* login header */
+  /* div containing form */
+  /* username and password fields */
+  /* submit button */ }
+  .login-container h1 {
+    color: #55acee;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 10px; }
+  .login-container form {
+    text-align: center; }
+  .login-container input:not([type="button"]) {
+    font-family: 'Open Sans', 'sans-serif';
+    border: 1px solid #acacac;
+    color: #666;
+    opacity: .7;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 250px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    font-size: 16px; }
+  .login-container input:focus:not([type="button"]) {
+    border: 1px solid #55acee;
+    opacity: 1;
+    width: 320px;
+    outline: none;
+    color: #55acee; }
+  .login-container input[type="button"] {
+    padding: 15px 25px;
+    font-size: 22px;
+    width: 420px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    background-color: #55acee;
+    box-shadow: 0px 5px 0px 0px #3C93D5;
+    outline: none;
+    border: none; }
+  .login-container input[type="button"]:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 0px 0px 0px; }
+  .login-container input[type="button"]:hover {
+    background-color: #6FC6FF; }
+  .login-container .error {
+    color: red;
+    margin-top: 5px; }
+
+/*# sourceMappingURL=login.css.map */

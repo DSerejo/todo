@@ -10,25 +10,35 @@ var sass = require('gulp-sass');
 var uglifycss = require('gulp-uglifycss')
 
 var scripts = "./src/js/*.js";
-var scssFolder = './src/scss/*.scss';
+var scssFolder = './src/scss/*.css';
 var html = "./src/*.html";
 var templates="./src/templates/*.html";
 var fonts = "./src/fonts/*.*";
+var images = "./src/images/*.*";
 
 var vendor = [
+    "./bower_components/jquery/jquery.js",
+    "./bower_components/jquery-ui/jquery-ui.js",
     "./bower_components/angular/angular.js",
     "./bower_components/angular-route/angular-route.js",
     "./bower_components/angular-cookies/angular-cookies.js",
     "./bower_components/firebase/firebase.js",
     "./bower_components/angularfire/dist/angularfire.js",
-
-    "./bower_components/jquery/dist/jquery.js",
     "./bower_components/bootstrap/dist/js/bootstrap.js",
-    "/bower_components/isotope/dist/isotope.pkgd.js",
+    "./bower_components/angular-bootstrap/ui-bootstrap.js",
+    "./bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js",
+    "./bower_components/interact/interact.js",
+    "./bower_components/angular-ui-date/src/date.js",
+    "./bower_components/jquery-ui/jquery.ptTimeSelect.js",
+
     ];
 
 var vendorCss=[
-    "./bower_components/bootstrap/dist/css/bootstrap.css"
+
+    "./bower_components/bootstrap/dist/css/bootstrap.css",
+    "./bower_components/jquery-ui/themes/smoothness/jquery-ui.css",
+    "./bower_components/bootstrap-timepicker/css/bootstrap-timepicker.css",
+   "./bower_components/jquery-ui/jquery.ptTimeSelect.css",
 ];
 //Aqui criamos uma nova tarefa através do ´gulp.task´ e damos a ela o nome 'lint'
 gulp.task('lint', function() {
@@ -51,7 +61,7 @@ gulp.task('script', function() {
     gulp.src(vendor)
         .pipe(concat('./dist'))
         .pipe(rename('app.min.js'))
-       // .pipe(uglify())
+     //   .pipe(uglify())
         .pipe(gulp.dest('./dist/js'));
 });
 
@@ -76,19 +86,21 @@ gulp.task('html', function() {
         .pipe(gulp.dest('./dist/templates'));
     gulp.src(fonts)
         .pipe(gulp.dest('./dist/fonts'));
-    vendorCss.push('./src/scss/*.css');
+    gulp.src(images)
+        .pipe(gulp.dest('./dist/images'));
+    vendorCss.push(scssFolder);
     gulp.src(vendorCss)
         .pipe(concat('./dist/css'))
         .pipe(rename('app.css'))
-      //  .pipe(uglifycss())
+        .pipe(uglifycss())
         .pipe(gulp.dest('./dist/css'));
 
 });
 
 //Criamos uma tarefa 'default' que vai rodar quando rodamos `gulp` no projeto
 gulp.task('watch', function () {
-    gulp.watch(scssFolder, ['html']);
-    gulp.watch(html, ['html']);
+    //gulp.watch(scssFolder, ['html']);
+    gulp.watch([html,templates,vendorCss,scssFolder], ['html']);
     gulp.watch(scripts, ['script','lint']);
 
 });

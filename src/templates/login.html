@@ -1,7 +1,19 @@
-<form ng-controller="LoginCrtl">
-    <input type="text" ng-model="user.name" name="login" value = "denny@denny.com">
-    <input type="text" ng-model="user.pwd" name="password" value="aaa">
-    <input type="submit" ng-click="login(user)" value="Start!!" />
-    <span>{{msg.error}}</span>
+<nav class="navbar menu" ng-include="'templates/menu.html'"></nav>
+<div class="container-fluid">
 
-</form>
+<div class="login-container" ng-controller="LoginCrtl">
+    <!-- login div -->
+    <div class="login">
+        <!-- login header -->
+        <h1 id="header">Sign up in seconds</h1>
+        <!-- start da login goodness -->
+        <form id="form">
+            <input type="text" placeholder="What's your username?" maxlength="16" ng-model="user.name"><br />
+            <input type="password" placeholder="Choose a password" ng-model="user.pwd"><br />
+            <input type="button" value="Sign me up!" ng-click="login(user)">
+            <p class="error">{{msg.error}}</p>
+        </form>
+    </div>
+</div>
+
+</div>

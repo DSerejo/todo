@@ -1,0 +1,38 @@
+<form id="addTaskForm">
+    <div class="container-fluid">
+        <div class="title">Add new task</div>
+        <div class="taskTitle row">
+            <div class="col-xs-10">
+                <input type="text " maxlength="30" name="newTaskTitle"  placeholder="Task title" ng-model="newTask.title"
+                       ng-model-options="{ getterSetter: true }">
+                <p class="counter" ng-class="" ng-bind="countTitleChars(newTask.title)"></p>
+            </div>
+            <div class = 'pencil col-xs-4' ng-include="'images/pencil.svg'"></div>
+        </div>
+        <textarea name="newTask" placeholder="Task description" maxlength="140" ng-model="newTask.text"></textarea>
+        <p class="counter" ng-class="" ng-bind="countChars(newTask.text)"></p>
+        <input ui-date>
+        <input name="time" value="" />
+        <script type="text/javascript">
+//            $(document).ready(function(){
+//                $('input[name="time"]').ptTimeSelect();
+//            });
+        </script>
+
+        <script type="text/javascript">
+            $('#timepicker1').timepicker();
+        </script>
+
+        <ul class="palette">
+            <li ng-repeat="color in postitColors" class="{{color.class}}" data-name="{{color.name}}" data-color="{{color.color}}"
+                    ng-click="changeCurrentColor(color)"></li>
+
+        </ul>
+        <div class="buttons row">
+            <ul class="buttons-container">
+                <li class="" ng-click="toggleTaskForm()">Cancel</li>
+                <li class="" ng-click="submit()">Submit</li>
+            </ul>
+        </div>
+    </div>
+</form>
