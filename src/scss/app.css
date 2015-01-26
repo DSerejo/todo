@@ -91,7 +91,10 @@
       .post-it .miniMenu li svg {
         width: 100%;
         height: 100%; }
+  .post-it .checkmark.show {
+    visibility: visible; }
   .post-it .checkmark {
+    visibility: hidden;
     width: 100%;
     height: 100%;
     top: 0;

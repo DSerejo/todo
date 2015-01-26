@@ -85,7 +85,11 @@
 
   }
   //display: box;
+  .checkmark.show{
+    visibility: visible;
+  }
   .checkmark{
+    visibility: hidden;
     width: 100%;
     height: 100%;
     top: 0;

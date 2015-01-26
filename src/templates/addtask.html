@@ -11,17 +11,6 @@
         </div>
         <textarea name="newTask" placeholder="Task description" maxlength="140" ng-model="newTask.text"></textarea>
         <p class="counter" ng-class="" ng-bind="countChars(newTask.text)"></p>
-        <input ui-date>
-        <input name="time" value="" />
-        <script type="text/javascript">
-//            $(document).ready(function(){
-//                $('input[name="time"]').ptTimeSelect();
-//            });
-        </script>
-
-        <script type="text/javascript">
-            $('#timepicker1').timepicker();
-        </script>
 
         <ul class="palette">
             <li ng-repeat="color in postitColors" class="{{color.class}}" data-name="{{color.name}}" data-color="{{color.color}}"

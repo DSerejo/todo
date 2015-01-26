@@ -17,7 +17,7 @@ var fonts = "./src/fonts/*.*";
 var images = "./src/images/*.*";
 
 var vendor = [
-    "./bower_components/jquery/jquery.js",
+    "./bower_components/jquery/dist/jquery.js",
     "./bower_components/jquery-ui/jquery-ui.js",
     "./bower_components/angular/angular.js",
     "./bower_components/angular-route/angular-route.js",
@@ -26,10 +26,10 @@ var vendor = [
     "./bower_components/angularfire/dist/angularfire.js",
     "./bower_components/bootstrap/dist/js/bootstrap.js",
     "./bower_components/angular-bootstrap/ui-bootstrap.js",
-    "./bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js",
+    //"./bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js",
     "./bower_components/interact/interact.js",
     "./bower_components/angular-ui-date/src/date.js",
-    "./bower_components/jquery-ui/jquery.ptTimeSelect.js",
+
 
     ];
 
@@ -37,8 +37,8 @@ var vendorCss=[
 
     "./bower_components/bootstrap/dist/css/bootstrap.css",
     "./bower_components/jquery-ui/themes/smoothness/jquery-ui.css",
-    "./bower_components/bootstrap-timepicker/css/bootstrap-timepicker.css",
-   "./bower_components/jquery-ui/jquery.ptTimeSelect.css",
+ //   "./bower_components/bootstrap-timepicker/css/bootstrap-timepicker.css",
+
 ];
 //Aqui criamos uma nova tarefa através do ´gulp.task´ e damos a ela o nome 'lint'
 gulp.task('lint', function() {

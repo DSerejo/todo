@@ -4,7 +4,7 @@
 
 fb = new Firebase("https://intense-fire-6623.firebaseio.com");
 
-var todoApp = angular.module('todoApp', ['todoControllers','ngRoute',"firebase",'ui.date']);
+var todoApp = angular.module('todoApp', ['todoControllers','ngRoute',"firebase"]);
 todoApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.

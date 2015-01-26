@@ -19,11 +19,15 @@
             data-x="{{task.x}}" data-y="{{task.y}}" >
         <strong>{{task.title}}</strong><br>
         {{task.text}}
+
         <ul class="miniMenu">
             <li class = 'checkmarkMenu' ng-include="'images/checkmark.svg'" ng-click="checkTask(key,task)"></li>
             <li class = 'editMenu' ng-include="'images/edit.svg'" ng-click="adding?currentTask(key,task):toggleTaskForm(key,task)"></li>
         </ul>
-        <div class = 'checkmark' ng-include="'images/checkmark.svg'" ng-show="task.checked" ng-click="removeTask()"></div>
+        <!--<div class = 'checkmark' ng-include="'images/checkmark.svg'" ng-hide="task.checked" ng-click="removeTask()">-->
+        <div class = 'checkmark' ng-include="'images/checkmark.svg'" ng-class="{show: task.checked}">
+
+        </div>
 
     </div>
 
@@ -32,7 +36,7 @@
 <!--<script type="text/ng-template"  id="tree_item_renderer.html">-->
     <!--<input ng-model="data.text" ng-change="data.$save()" />-->
     <!--<input ng-model="data.date" ng-change="data.$save()" />-->
-    <!--&lt;!&ndash; delete message &ndash;&gt;-->
+    <!--<!-- delete message -->-->
     <!--<button ng-click="removeTask(key,data)">X</button>-->
     <!--<button ng-click="addTask(key,{text:'a',date:'2014-01-02'},data)">+</button>-->
     <!--<ul>-->

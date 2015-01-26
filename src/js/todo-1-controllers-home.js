@@ -77,9 +77,9 @@ var iniciaFiltro=function($scope){
             'filterId': 2,
             'text': 'Completed'
         },
-        {    'filterId': 3,
-            'text': 'Delayed'
-        }
+//        {    'filterId': 3,
+//            'text': 'Delayed'
+//        }
     ];
 
 };
@@ -89,6 +89,7 @@ todoControllers.controller('HomeCtrl', ['$scope', '$http','$rootScope',"$firebas
         $scope.currentColor= {class:"postit",name:"Post-it",color:"fef495"};
         $scope.postitColors=postitColors;
         $rootScope.adding=false;
+
         $rootScope.newTask={
             text:"",
             title:""
@@ -119,6 +120,7 @@ todoControllers.controller('HomeCtrl', ['$scope', '$http','$rootScope',"$firebas
         $scope.checkTask= function(key,task){
             task.checked=task.checked||false;
             task.checked=!task.checked;
+            $scope.$apply();
             $scope.editTask(key,task);
         };
         $scope.editTask= function(key,task){
